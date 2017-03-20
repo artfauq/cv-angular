@@ -1,0 +1,13 @@
+<div class="cv-timeline-content">
+    <p class="cv-timeline-titre">{{formation.nom}}</p>
+    <p class="cv-description">{{formation.description}}</p>
+    <p class="cv-lieu">{{formation.lieu}}</p>
+    <!--<a href="#0" class="cd-read-more">Read more</a>-->
+</div>
+<div class="cv-timeline-date">
+    <p><span ng-hide="{{formation.dateFin}}"></span>{{formation.dateDebut | formatDate | date:'MMMM yyyy'}}<span ng-show="{{formation.dateFin}}"><br>{{formation.dateFin | formatDate | date:'MMMM yyyy'}}</span></p>
+</div>
+<div class="cv-timeline-join"></div>
+<div class="cv-timeline-img">
+    <img src="images/formations/{{formation.id}}.png" alt="Logo {{formation.id}}">
+</div>

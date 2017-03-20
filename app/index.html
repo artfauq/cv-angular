@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>First Angular App</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <!-- End Stylesheets -->
+
+    <!-- AngularJS Scripts -->
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-i18n/angular-locale_fr-fr.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+
+    <!-- End AngularJS Scripts -->
+</head>
+
+<body ng-app="myApp">
+    <div class="container" ng-controller="MainController">
+        <div id="cv-timeline">
+            <section id="projets">
+                <div timeline-block ng-repeat="projet in projets" even="$even" info="projet"></div>
+            </section>
+            <!--
+            <section id="projets">
+                <div projet info="projet" ng-repeat="projet in projets" class="cv-timeline-block"></div>
+            </section>
+
+            <section id="activites">
+                <div activite info="activite" ng-repeat="activite in activites" class="cv-timeline-block"></div>
+            </section>-->
+        </div>
+
+        <!--<section id="competences" ng-repeat="competence in competences">
+            <h2>Competences</h2>
+            <div competence info="competence"></div>
+        </section>
+
+        <section id="logiciels" ng-repeat="logiciel in logiciels">
+            <h2>Logiciels</h2>
+            <div logiciel info="logiciel"></div>
+        </section>
+
+        <section id="langues" ng-repeat="langue in langues">
+            <h2>Langues</h2>
+            <div langue info="langue"></div>
+        </section>-->
+    </div>
+
+    <!-- Scripts -->
+    <!-- Vendors -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- End Vendors -->
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <!-- Controllers -->
+    <script type="text/javascript" src="scripts/controllers/MainController.js"></script>
+    <!-- End Controllers -->
+    <!-- Services -->
+    <script type="text/javascript" src="scripts/services/dataFetch.js"></script>
+    <!-- End Services -->
+    <!-- Directives -->
+    <script type="text/javascript" src="scripts/directives/formation.js"></script>
+    <script type="text/javascript" src="scripts/directives/projet.js"></script>
+    <script type="text/javascript" src="scripts/directives/competence.js"></script>
+    <script type="text/javascript" src="scripts/directives/logiciel.js"></script>
+    <script type="text/javascript" src="scripts/directives/langue.js"></script>
+    <script type="text/javascript" src="scripts/directives/activite.js"></script>
+    <script type="text/javascript" src="scripts/directives/timelineBlock.js"></script>
+    <!-- End Directives -->
+    <!-- End Scripts -->
+</body>
+
+</html>

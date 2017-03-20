@@ -1,0 +1,12 @@
+<h3 class="cv-nom">{{activite.nom}}</h3>
+<div class="cv-element flexbox-h">
+    <div class="col-sm-9 col-lg-10">
+        <p><b>{{activite.occupation}}</b> - {{activite.lieu}}</p>
+        <p>De<span ng-hide="{{activite.dateFin}}">puis</span> <em>{{activite.dateDebut | formatDate | date:'MMMM yyyy' | capitalize}}</em>
+            <span ng-show="{{activite.dateFin}}">à <em>{{activite.dateFin | formatDate | date:'MMMM yyyy' | capitalize}}</em></span></p>
+        <p class="description">{{activite.description}}</p>
+    </div>
+    <div class="col-sm-3 col-lg-2">
+        <img src="images/activites/{{activite.id}}.jpg" class="cv-logo-big">
+    </div>
+</div>

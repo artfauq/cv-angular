@@ -1,0 +1,17 @@
+{
+  "name": "angular-app",
+  "description": "First AngularJS application.",
+  "main": "index.js",
+  "authors": [
+    "Arthur Fauquenot"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
