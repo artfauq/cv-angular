@@ -1,0 +1,246 @@
+{
+    "formations": [{
+            "nom": "ECE Paris",
+            "id": "ece",
+            "lieu": "Paris, France",
+            "dateDebut": "2012-09",
+            "dateFin": "2017-06",
+            "description": "Majeure Objets Connectés, Réseaux et Services. Développement web - Application mobile (Android) - Projets informatiques (Java, C…) - Prototypage d’objets connectés (Conception 3D, Réseaux, Capteurs…) - Gestion de projet"
+        },
+        {
+            "nom": "University of Newcastle",
+            "id": "uon",
+            "lieu": "Newcastle, Australie",
+            "dateDebut": "2016-07",
+            "dateFin": "2016-11",
+            "description": "Semestre d'études à l'étranger. Technologies web (Java EE) - Multimédia et animation 3D - Communication digitale (WordPress) - Entrepreneuriat et diversité de l’innovation"
+        },
+        {
+            "nom": "Concordia University",
+            "id": "concordia",
+            "lieu": "Montréal, Canada",
+            "dateDebut": "2014-09",
+            "dateFin": "2014-12",
+            "description": "Semestre d'études à l'étranger. Programmation Orientée Objet (C++) - Management de projet - Conception de systèmes numériques - Gestion budgétaire"
+        }
+    ],
+    "projets": [{
+            "nom": "Ingénieur Étude et Développement",
+            "societe": "Solutec",
+            "id": "solutec",
+            "lieu": "Paris, France",
+            "dateDebut": "2017-03",
+            "dateFin": "2017-08",
+            "description": "Stage de 6 mois. Mission d'étude et de développement en JavaScript."
+        },
+        {
+            "nom": "Programmeur R&D",
+            "societe": "Singularity Insight",
+            "id": "singularity-insight",
+            "lieu": "Paris, France",
+            "dateDebut": "2016-04",
+            "dateFin": "2016-07",
+            "description": "Stage de trois mois. Recherche et développement dans le domaine des lunettes connectées - Création d’applications de réalité augmentée"
+        },
+        {
+            "nom": "Développeur",
+            "societe": "MINT - ECE Paris",
+            "id": "mint",
+            "lieu": "Paris, France",
+            "dateDebut": "2015-09",
+            "dateFin": "2016-05",
+            "description": "Projet étudiant dans l’innovation digitale. Développement d’une interface tactile intuitive pour simplifier le processus d’enregistrement et de traitement d’une chanson - Lauréat du concours Digiprize"
+        },
+        {
+            "nom": "Développeur web",
+            "societe": "ALD Automotive",
+            "id": "ald-automotive",
+            "lieu": "Clichy, France",
+            "dateDebut": "2015-06",
+            "dateFin": "2015-07",
+            "description": "Stage de deux mois. Développement d’un portail web - Découverte des outils eXo Platform, XWiki et Microsoft Visual Studio (C#)"
+        }
+    ],
+    "competences": [{
+            "nom": "Développement web - Front-End",
+            "elements": [{
+                    "nom": "HTML 5",
+                    "id": "html5"
+                },
+                {
+                    "nom": "CSS 3",
+                    "id": "css3"
+                },
+                {
+                    "nom": "JavaScript",
+                    "id": "javascript"
+                }
+            ]
+        },
+        {
+            "nom": "Développement web - Back-End",
+            "elements": [{
+                    "nom": "PHP 5",
+                    "id": "php"
+                },
+                {
+                    "nom": "MySQL",
+                    "id": "mysql"
+                },
+                {
+                    "nom": "Java EE",
+                    "id": "javaee"
+                }
+            ]
+        },
+        {
+            "nom": "Développement logiciel",
+            "elements": [{
+                    "nom": "Java",
+                    "id": "java"
+                },
+                {
+                    "nom": "C++",
+                    "id": "c++-language"
+                },
+                {
+                    "nom": "C",
+                    "id": "c-language"
+                },
+                {
+                    "nom": "Python",
+                    "id": "python"
+                }
+            ]
+        }
+    ],
+    "logiciels": [{
+            "nom": "Développement",
+            "elements": [{
+                    "nom": "Git",
+                    "id": "git"
+                },
+                {
+                    "nom": "Sass",
+                    "id": "sass"
+                },
+                {
+                    "nom": "jQuery",
+                    "id": "jquery"
+                },
+                {
+                    "nom": "Gulp",
+                    "id": "gulp"
+                },
+                {
+                    "nom": "Bootstrap 3",
+                    "id": "bootstrap"
+                },
+                {
+                    "nom": "Wamp",
+                    "id": "wamp"
+                },
+                {
+                    "nom": "Cake PHP",
+                    "id": "cakephp"
+                },
+                {
+                    "nom": "WordPress",
+                    "id": "wordpress"
+                },
+                {
+                    "nom": "Visual Studio Code",
+                    "id": "vscode"
+                },
+                {
+                    "nom": "Eclipse",
+                    "id": "eclipse"
+                },
+                {
+                    "nom": "NetBeans",
+                    "id": "netbeans"
+                },
+                {
+                    "nom": "Dreamweaver",
+                    "id": "dreamweaver"
+                },
+                {
+                    "nom": "Android Studio",
+                    "id": "android-studio"
+                }
+            ]
+        },
+        {
+            "nom": "Media",
+            "elements": [{
+                    "nom": "Adobe Photoshop",
+                    "id": "photoshop"
+                },
+                {
+                    "nom": "Adobe InDesign",
+                    "id": "indesign"
+                },
+                {
+                    "nom": "Adobe Illustrator",
+                    "id": "illustrator"
+                },
+                {
+                    "nom": "Adobe Lightroom",
+                    "id": "lightroom"
+                },
+                {
+                    "nom": "Adobe Premiere Pro",
+                    "id": "premiere-pro"
+                },
+                {
+                    "nom": "Adobe After Effects",
+                    "id": "after-effects"
+                }
+            ]
+        },
+        {
+            "nom": "Autres",
+            "elements": [{
+                    "nom": "Suite Microsoft Office",
+                    "id": "office"
+                },
+                {
+                    "nom": "Cinema 4D",
+                    "id": "c4d"
+                },
+                {
+                    "nom": "Ableton Live",
+                    "id": "ableton"
+                }
+            ]
+        }
+    ],
+    "langues": [{
+            "nom": "Anglais",
+            "niveau": "Niveau B2 - IELTS 7,5/9"
+        },
+        {
+            "nom": "Espagnol",
+            "niveau": "Niveau A2"
+        }
+    ],
+    "activites": [{
+            "nom": "No Larsen",
+            "occupation": "Vice-Président Communication",
+            "id": "no-larsen",
+            "lieu": "Paris, France",
+            "dateDebut": "2015-05",
+            "dateFin": "2016-04",
+            "description": "Association Son et Lumières de l'ECE Paris. Organisation d’évènements musicaux dont un festival caritatif d’une semaine - Communication sur les réseaux sociaux - Réalisation d’affiches, flyers et vidéos promotionnelles"
+        },
+        {
+            "nom": "Scouts et Guides de France",
+            "occupation": "Divers",
+            "id": "sgdf",
+            "lieu": "Rueil-Malmaison, France",
+            "dateDebut": "2002-09",
+            "dateFin": "2014-08",
+            "description": "Projet solidaire d’un mois dans une école à Da Teh, Vietnam - Chef Scout - Louveteau, scout, pionner et compagnon"
+        }
+    ]
+}
