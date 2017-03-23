@@ -16,33 +16,29 @@
     <!-- AngularJS Scripts -->
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-i18n/angular-locale_fr-fr.js"></script>
-    <script type="text/javascript" src="scripts/app.js"></script>
-
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <!-- End AngularJS Scripts -->
 </head>
 
 <body ng-app="myApp">
     <div class="container" ng-controller="MainController">
-        <div id="cv-timeline">
-            <section id="projets">
-                <div timeline-block ng-repeat="projet in projets" even="$even" info="projet"></div>
-            </section>
-            <!--
-            <section id="projets">
-                <div projet info="projet" ng-repeat="projet in projets" class="cv-timeline-block"></div>
-            </section>
-
-            <section id="activites">
-                <div activite info="activite" ng-repeat="activite in activites" class="cv-timeline-block"></div>
-            </section>-->
+        <div>
+            <a href="cv/{{section.name | lowercase}}" ng-repeat="section in sections" ng-click="activeLink = section.name">{{section.name}}</a>
         </div>
 
-        <!--<section id="competences" ng-repeat="competence in competences">
+        <section id="projets" class="timeline" ng-show="activeTab == 1">
+            <div ng-repeat="projet in sections.projets.content">
+                <div timeline-block ng-class-even="'cv-timeline-block-even'" class="cv-timeline-block" info="projet"></div>
+            </div>
+        </section>
+
+        <section id="competences" ng-repeat="competence in competences">
             <h2>Competences</h2>
             <div competence info="competence"></div>
         </section>
 
-        <section id="logiciels" ng-repeat="logiciel in logiciels">
+        <!--<section id="logiciels" ng-repeat="logiciel in logiciels">
             <h2>Logiciels</h2>
             <div logiciel info="logiciel"></div>
         </section>
