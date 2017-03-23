@@ -1,18 +1,41 @@
 app.controller('MainController', ['$scope', 'dataFetch', function($scope, dataFetch) {
 
+    $scope.activeTab = 1;
+
     dataFetch.then(function(response) {
         var data = response.data;
 
-        var projets = (data.formations).concat(data.projets);
-        projets.sort(function(a, b) {
+        var timelineObjects = (data.formations).concat(data.projets);
+        timelineObjects.sort(function(a, b) {
             return new Date(b.dateDebut) - new Date(a.dateDebut);
         });
 
-        $scope.projets = projets;
-        $scope.competences = data.competences;
-        $scope.logiciels = data.logiciels;
-        $scope.langues = data.langues;
-        $scope.activites = data.activites;
-
-    })
+        $scope.sections = {
+            projets: {
+                name: "Projets",
+                content: timelineObjects,
+                tab: 1
+            },
+            competences: {
+                name: "Competences",
+                content: data.competences,
+                tab: 2
+            },
+            logiciels: {
+                name: "Logiciels",
+                content: data.logiciels,
+                tab: 3
+            },
+            langues: {
+                name: "Langues",
+                content: data.langues,
+                tab: 4
+            },
+            activites: {
+                name: "Activites",
+                content: data.activites,
+                tab: 5
+            }
+        };
+    });
 }]);

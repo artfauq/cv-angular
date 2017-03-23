@@ -13,5 +13,12 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "angular-i18n": "^1.6.3"
+  }
 }
