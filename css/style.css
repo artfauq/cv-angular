@@ -1,0 +1,72 @@
+body {
+  background-color: #edf2f7; }
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none; }
+
+h2 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 3.5em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2c2c2c;
+  letter-spacing: .15em;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px; }
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.6em; }
+  h3 span {
+    font-size: 60%; }
+
+p {
+  margin: 0; }
+
+section {
+  margin-bottom: 30px; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+/* General classes */
+.center-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.v-align {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+/* Specific Classes */
+.list-order {
+  padding: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+  .list-order ul {
+    display: inline-block;
+    width: 20%;
+    text-align: center; }
+    .list-order ul li {
+      display: inline-block;
+      margin: 0px 10px; }
+  .list-order p {
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+    font-size: 1em;
+    width: 40%;
+    text-align: right;
+    display: inline-block; }
+
+.order-by.active {
+  font-weight: bold; }

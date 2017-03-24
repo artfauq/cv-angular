@@ -4,6 +4,6 @@ app.directive('langue', function() {
         scope: {
             langue: '=info'
         },
-        templateUrl: 'scripts/templates/langue.html'
+        templateUrl: 'js/templates/langue.html'
     }
 });
