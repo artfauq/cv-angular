@@ -2,8 +2,8 @@ app.directive('competence', function() {
     return {
         restrict: 'A',
         scope: {
-            categorie: '=info'
+            element: '='
         },
-        templateUrl: 'scripts/templates/competence.html'
+        templateUrl: 'js/templates/competence.html'
     }
 });

@@ -7,10 +7,16 @@ var bases = {
     app: 'app/'
 };
 
-gulp.task('sass', function() {
-    return gulp.src('./styles/**/*.scss', { cwd: bases.app })
+var paths = {
+    html: './**/*.html',
+    styles: './scss/**/*.scss',
+    scripts: './js/**/*.js'
+}
+
+gulp.task('styles', function() {
+    return gulp.src(paths.styles, { cwd: bases.app })
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./styles', { cwd: bases.app }));
+        .pipe(gulp.dest('./css/', { cwd: bases.app }));
 });
 
 gulp.task('serve', function() {
@@ -19,6 +25,7 @@ gulp.task('serve', function() {
         port: 8080
     });
 
-    gulp.watch("app/*.html").on('change', browserSync.reload);
-    gulp.watch("app/**/*.css").on('change', browserSync.reload);
+    gulp.watch(bases.app + paths.html).on('change', browserSync.reload);
+    gulp.watch(bases.app + paths.styles, ['styles']).on('change', browserSync.reload);
+    gulp.watch(bases.app + paths.scripts).on('change', browserSync.reload);
 });

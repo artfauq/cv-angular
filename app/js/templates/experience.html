@@ -1,0 +1,17 @@
+<div class="cv-timeline-info">
+    <img src="images/{{element.id}}.png" alt="Logo {{element.id}}" class="cv-timeline-img">
+    <div class="cv-timeline-date">
+        <p><span ng-hide="{{element.dateFin}}"></span>{{element.dateDebut | formatDate | date:'MMMM yyyy'}}<span ng-show="{{element.dateFin}}"><br>{{element.dateFin | formatDate | date:'MMMM yyyy'}}</span></p>
+    </div>
+</div>
+<div class="cv-timeline-content">
+    <p class="cv-projet-titre">{{element.nom}}</p>
+    <p class="cv-projet-description">{{element.description}}</p>
+    <div class="cv-projet-lieu">
+        <p>{{element.lieu}}</p>
+    </div>
+    <div class="cv-projet-type">
+        <p>{{element.type}}</p>
+    </div>
+</div>
+<div class="cv-timeline-join"></div>
