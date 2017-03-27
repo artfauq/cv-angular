@@ -1,10 +1,13 @@
 // Colors
-$background-color: #edf2f7;
+$background-color: rgb(250, 245, 240);
 $color-white: #fff;
 $color-black: #000;
-$timeline-main-color: darken($color-white, 20%);
+$light-black: darken($color-white, 45%);
+$medium-black: darken($color-white, 65%);
 // Breakpoints
 $breakpoint-xs: 400px;
 $breakpoint-sm: 768px;
 $breakpoint-md: 992px;
 $breakpoint-md: 1200px;
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Raleway');

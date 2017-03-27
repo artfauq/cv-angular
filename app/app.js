@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute', 'ngAnimate']);
+var app = angular.module('myApp', ['ngRoute', 'ngAnimate', 'angular.filter']);
 
 app.filter('capitalize', function() {
     return function(input) {
