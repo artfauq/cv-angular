@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $(window).on('load', function() {
-
         // Initialize
         $('#timeline').fadeIn();
         hideBlocks();
@@ -13,10 +12,11 @@ $(document).ready(function() {
 
         $(window).on('scroll', function() {
             blocksBounce();
+
         });
 
         function hideBlocks() {
-            $('.cv-timeline-block').each(function() {
+            $('.cv-timeline-block, .cv-element').each(function() {
                 var offsetTop = $(this).offset().top;
                 var offsetBottom = offsetTop + $(this).outerHeight();
                 var windowScroll = $(window).scrollTop();
@@ -31,7 +31,7 @@ $(document).ready(function() {
         }
 
         function blocksBounce() {
-            $('.cv-timeline-block').each(function() {
+            $('.cv-timeline-block, .cv-element').each(function() {
                 var offsetTop = $(this).offset().top;
                 var offsetBottom = offsetTop + $(this).outerHeight();
                 var windowScroll = $(window).scrollTop();

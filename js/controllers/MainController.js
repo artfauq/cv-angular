@@ -37,7 +37,6 @@ app.controller('MainController', function($scope, dataFetch) {
         var experiences = data.experiences;
         var competences = data.competences;
         var outils = data.outils;
-        var langues = data.langues;
 
         experiences.forEach(function(projet, index) {
             projet.dateDebut = new Date(projet.dateDebut).getTime();
@@ -46,8 +45,7 @@ app.controller('MainController', function($scope, dataFetch) {
         $scope.sections = {
             experiences: experiences,
             competences: competences,
-            outils: outils,
-            langues: langues
+            outils: outils
         };
     });
 });

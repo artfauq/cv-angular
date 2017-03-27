@@ -119,7 +119,7 @@
         },
         {
             "nom": "Java EE",
-            "id": "javaee",
+            "id": "java-ee",
             "type": "Développement web - Back-End"
         },
         {
@@ -141,6 +141,24 @@
             "nom": "Python",
             "id": "python",
             "type": "Développement logiciel"
+        },
+        {
+            "nom": "Français",
+            "id": "francais",
+            "niveau": "Langue Maternelle",
+            "type": "Langues"
+        },
+        {
+            "nom": "Anglais",
+            "id": "anglais",
+            "niveau": "Niveau B2 - IELTS 7,5/9",
+            "type": "Langues"
+        },
+        {
+            "nom": "Espagnol",
+            "id": "espagnol",
+            "niveau": "Niveau A2",
+            "type": "Langues"
         }
     ],
     "outils": [{
@@ -239,8 +257,18 @@
             "type": "Media"
         },
         {
-            "nom": "Suite Microsoft Office",
-            "id": "office",
+            "nom": "Word 2016",
+            "id": "office-word",
+            "type": "Autres"
+        },
+        {
+            "nom": "Powerpoint 2016",
+            "id": "office-powerpoint",
+            "type": "Autres"
+        },
+        {
+            "nom": "Excel 2016",
+            "id": "office-excel",
             "type": "Autres"
         },
         {
@@ -257,15 +285,6 @@
             "nom": "Ableton Live",
             "id": "ableton",
             "type": "Autres"
-        }
-    ],
-    "langues": [{
-            "nom": "Anglais",
-            "niveau": "Niveau B2 - IELTS 7,5/9"
-        },
-        {
-            "nom": "Espagnol",
-            "niveau": "Niveau A2"
         }
     ]
 }

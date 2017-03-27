@@ -1,4 +1,5 @@
 @import "variables";
+$timeline-main-color: $light-black;
 #timeline {
     position: relative;
     padding: 2em 0;
@@ -11,7 +12,7 @@
         top: 0;
         left: 98%;
         height: 100%;
-        width: 4px;
+        width: 3px;
         background: $timeline-main-color;
         @media (min-width: $breakpoint-sm) {
             left: 50%;
@@ -35,6 +36,61 @@
             content: "";
             display: table;
             clear: both;
+        }
+        .cv-timeline-content {
+            padding: 18px 14px 14px 20px;
+            background-color: $color-white;
+            box-shadow: 1px 2px 3px lighten($color-black, 85%);
+            position: relative;
+            @media (min-width: $breakpoint-sm) {
+                width: 45%;
+            }
+            &:after {
+                left: 100%;
+                top: 15px;
+                border: 6px solid rgba(255, 255, 255, 0);
+                content: '';
+                position: absolute;
+                pointer-events: none;
+                border-left-color: $color-white;
+            }
+            .cv-projet-titre {
+                font-size: 1.5em;
+                font-family: "Open Sans";
+                margin-bottom: 10px;
+            }
+            .cv-projet-description {
+                font-size: 15px;
+                line-height: 22px;
+                display: inline-block;
+            }
+            .cv-projet-lieu,
+            .cv-projet-type {
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+            .cv-projet-lieu {
+                padding: 20px 0px 5px;
+                p {
+                    letter-spacing: 3px;
+                    color: darken($color-white, 40%);
+                    text-shadow: 0px 0px 1px darken($color-white, 10%);
+                    font-size: 0.9em;
+                }
+            }
+            .cv-projet-type {
+                text-align: right;
+                p {
+                    font-size: 1em;
+                    display: inline-block;
+                    font-family: 'Raleway';
+                    padding: 5px 10px;
+                    border: 1px solid darken($color-white, 70%);
+                    box-shadow: 0px 0px 1px darken($color-white, 20%);
+                    color: darken($color-white, 70%);
+                    text-shadow: 0px 0px 1px darken($color-white, 20%);
+                }
+            }
         }
         .cv-timeline-info {
             margin-bottom: 8px;
@@ -83,11 +139,26 @@
                     text-transform: uppercase;
                     text-align: right;
                     font-weight: bold;
-                    color: darken($timeline-main-color, 12%);
+                    color: $timeline-main-color;
                     letter-spacing: 2px;
                     font-size: 1.1em;
                     line-height: 17px;
                 }
+            }
+        }
+        .cv-timeline-join {
+            position: absolute;
+            border-top: solid 2px $timeline-main-color;
+            width: 6.5%;
+            left: 104%;
+            top: 63px;
+            @media (min-width: $breakpoint-xs) {
+                top: 78px;
+                left: 103.5%;
+            }
+            @media (min-width: $breakpoint-sm) {
+                left: 47%;
+                top: 20px;
             }
         }
     }
@@ -115,75 +186,6 @@
                     float: right;
                 }
             }
-        }
-    }
-    .cv-timeline-content {
-        padding: 18px 14px 14px 20px;
-        background-color: $color-white;
-        box-shadow: 0 3px 5px darken($color-white, 15%);
-        border-radius: 2px;
-        position: relative;
-        @media (min-width: $breakpoint-sm) {
-            width: 45%;
-        }
-        &:after {
-            left: 100%;
-            top: 15px;
-            border: 6px solid rgba(255, 255, 255, 0);
-            content: '';
-            position: absolute;
-            pointer-events: none;
-            border-left-color: $color-white;
-        }
-        .cv-projet-titre {
-            font-size: 1.5em;
-            font-family: "Open Sans";
-            margin-bottom: 10px;
-        }
-        .cv-projet-description {
-            font-size: 15px;
-            line-height: 22px;
-            display: inline-block;
-        }
-        .cv-projet-lieu {
-            padding: 20px 0px 5px;
-            p {
-                color: rgba(0, 0, 0, .4);
-                font-size: 1em;
-            }
-        }
-        .cv-projet-lieu,
-        .cv-projet-type {
-            letter-spacing: 1px;
-            font-size: 1.1em;
-            text-transform: uppercase;
-        }
-        .cv-projet-type {
-            text-align: right;
-            p {
-                display: inline-block;
-                font-family: Roboto;
-                padding: 5px 10px;
-                letter-spacing: 1px;
-                border: 2px solid darken($color-white, 50%);
-                color: darken($color-white, 50%);
-                font-weight: bold;
-            }
-        }
-    }
-    .cv-timeline-join {
-        position: absolute;
-        border-top: solid 2px $timeline-main-color;
-        width: 6.5%;
-        left: 104%;
-        top: 63px;
-        @media (min-width: $breakpoint-xs) {
-            top: 78px;
-            left: 103.5%;
-        }
-        @media (min-width: $breakpoint-sm) {
-            left: 47%;
-            top: 20px;
         }
     }
 }
