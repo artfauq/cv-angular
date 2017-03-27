@@ -1,6 +1,6 @@
 {
-  "name": "angular-app",
-  "description": "First AngularJS application.",
+  "name": "angular-cv-app",
+  "description": "CV AngularJS application.",
   "main": "index.js",
   "authors": [
     "Arthur Fauquenot"
@@ -20,6 +20,7 @@
     "angular": "^1.6.3",
     "angular-route": "^1.6.3",
     "angular-i18n": "^1.6.3",
-    "angular-animate": "^1.6.3"
+    "angular-animate": "^1.6.3",
+    "normalize-css": "^6.0.0"
   }
 }

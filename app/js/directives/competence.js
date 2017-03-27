@@ -5,5 +5,5 @@ app.directive('competence', function() {
             element: '='
         },
         templateUrl: 'js/templates/competence.html'
-    }
+    };
 });
