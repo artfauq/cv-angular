@@ -5,5 +5,5 @@ app.directive('langue', function() {
             langue: '=info'
         },
         templateUrl: 'js/templates/langue.html'
-    }
+    };
 });

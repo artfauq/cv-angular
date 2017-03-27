@@ -5,5 +5,5 @@ app.directive('outil', function() {
             element: '='
         },
         templateUrl: 'js/templates/outil.html'
-    }
+    };
 });

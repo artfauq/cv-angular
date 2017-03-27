@@ -5,5 +5,5 @@ app.directive('experience', function() {
             element: '='
         },
         templateUrl: 'js/templates/experience.html'
-    }
+    };
 });
