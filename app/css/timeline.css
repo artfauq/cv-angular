@@ -12,7 +12,8 @@
     left: 98%;
     height: 100%;
     width: 3px;
-    background: #8c8c8c; }
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
     @media (min-width: 768px) {
       #timeline:before {
         left: 50%; } }
@@ -32,20 +33,12 @@
       content: "";
       display: table;
       clear: both; }
-    #timeline .cv-timeline-block:hover .cv-timeline-content {
-      right: -7px; }
-    #timeline .cv-timeline-block:hover .cv-timeline-info {
-      right: 7px; }
-    #timeline .cv-timeline-block:hover.cv-timeline-block-even .cv-timeline-content {
-      right: 7px; }
-    #timeline .cv-timeline-block:hover.cv-timeline-block-even .cv-timeline-info {
-      right: -7px; }
     #timeline .cv-timeline-block .cv-timeline-content {
-      padding: 18px 14px 14px 20px;
-      background-color: #fff;
-      box-shadow: 1px 2px 3px #d9d9d9;
       position: relative;
       right: 0;
+      padding: 18px 14px 14px 20px;
+      background-color: #fff;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
       transition: all 0.4s; }
       @media (min-width: 768px) {
         #timeline .cv-timeline-block .cv-timeline-content {
@@ -58,6 +51,8 @@
         position: absolute;
         pointer-events: none;
         border-left-color: #fff; }
+      #timeline .cv-timeline-block .cv-timeline-content:hover {
+        right: -6px; }
       #timeline .cv-timeline-block .cv-timeline-content .cv-projet-titre {
         font-size: 1.5em;
         font-family: "Open Sans";
@@ -66,28 +61,24 @@
         font-size: 15px;
         line-height: 22px;
         display: inline-block; }
-      #timeline .cv-timeline-block .cv-timeline-content .cv-projet-lieu,
-      #timeline .cv-timeline-block .cv-timeline-content .cv-projet-type {
-        letter-spacing: 2px;
-        text-transform: uppercase; }
+      #timeline .cv-timeline-block .cv-timeline-content .cv-projet-lieu p,
+      #timeline .cv-timeline-block .cv-timeline-content .cv-projet-type p {
+        text-transform: uppercase;
+        letter-spacing: 2px; }
       #timeline .cv-timeline-block .cv-timeline-content .cv-projet-lieu {
         padding: 20px 0px 5px; }
         #timeline .cv-timeline-block .cv-timeline-content .cv-projet-lieu p {
-          letter-spacing: 3px;
-          color: #999999;
-          text-shadow: 0px 0px 1px #e6e6e6;
+          color: gray;
           font-size: 0.9em; }
       #timeline .cv-timeline-block .cv-timeline-content .cv-projet-type {
         text-align: right; }
         #timeline .cv-timeline-block .cv-timeline-content .cv-projet-type p {
-          font-size: 1em;
           display: inline-block;
-          font-family: 'Raleway';
           padding: 5px 10px;
+          font-family: 'Raleway';
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
           border: 1px solid #4d4d4d;
-          box-shadow: 0px 0px 1px #cccccc;
-          color: #4d4d4d;
-          text-shadow: 0px 0px 1px #cccccc; }
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
     #timeline .cv-timeline-block .cv-timeline-info {
       margin-bottom: 8px;
       display: block;
@@ -137,13 +128,15 @@
           text-transform: uppercase;
           text-align: right;
           font-weight: bold;
-          color: #8c8c8c;
+          color: rgba(255, 255, 255, 0.85);
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
           letter-spacing: 2px;
           font-size: 1.1em;
           line-height: 17px; }
     #timeline .cv-timeline-block .cv-timeline-join {
       position: absolute;
-      border-top: solid 2px #8c8c8c;
+      border-top: solid 2px rgba(255, 255, 255, 0.85);
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
       width: 6.5%;
       left: 104%;
       top: 63px; }
@@ -163,6 +156,8 @@
         right: 100%;
         border-right-color: #fff;
         border-left: none; }
+      #timeline .cv-timeline-block-even .cv-timeline-content:hover {
+        right: 6px; }
     #timeline .cv-timeline-block-even .cv-timeline-info {
       float: left; }
       #timeline .cv-timeline-block-even .cv-timeline-info .cv-timeline-img {

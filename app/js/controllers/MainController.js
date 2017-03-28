@@ -27,7 +27,7 @@ app.controller('MainController', function($scope, dataFetch) {
     };
 
     $scope.isSelected = function(input) {
-        return ($scope.propertyName == input) ? 'active' : '';
+        return ($scope.propertyName == input) ? true : false;
     };
 
     // Fetch data from JSON file
