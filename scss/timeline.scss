@@ -1,6 +1,6 @@
 @import "variables";
-$timeline-main-color: $light-black;
-$block-translate: 7px;
+$timeline-main-color: $soft-white;
+$block-translate: 6px;
 #timeline {
     position: relative;
     padding: 2em 0;
@@ -15,6 +15,7 @@ $block-translate: 7px;
         height: 100%;
         width: 3px;
         background: $timeline-main-color;
+        box-shadow: $soft-shadow;
         @media (min-width: $breakpoint-sm) {
             left: 50%;
         }
@@ -38,28 +39,12 @@ $block-translate: 7px;
             display: table;
             clear: both;
         }
-        &:hover {
-            .cv-timeline-content {
-                right: -$block-translate;
-            }
-            .cv-timeline-info {
-                right: $block-translate;
-            }
-            &.cv-timeline-block-even {
-                .cv-timeline-content {
-                    right: $block-translate;
-                }
-                .cv-timeline-info {
-                    right: -$block-translate;
-                }
-            }
-        }
         .cv-timeline-content {
-            padding: 18px 14px 14px 20px;
-            background-color: $color-white;
-            box-shadow: 1px 2px 3px lighten($color-black, 85%);
             position: relative;
             right: 0;
+            padding: 18px 14px 14px 20px;
+            background-color: $color-white;
+            box-shadow: $soft-shadow;
             transition: all 0.4s;
             @media (min-width: $breakpoint-sm) {
                 width: 45%;
@@ -73,6 +58,9 @@ $block-translate: 7px;
                 pointer-events: none;
                 border-left-color: $color-white;
             }
+            &:hover {
+                right: -$block-translate;
+            }
             .cv-projet-titre {
                 font-size: 1.5em;
                 font-family: "Open Sans";
@@ -83,31 +71,27 @@ $block-translate: 7px;
                 line-height: 22px;
                 display: inline-block;
             }
-            .cv-projet-lieu,
-            .cv-projet-type {
-                letter-spacing: 2px;
+            .cv-projet-lieu p,
+            .cv-projet-type p {
                 text-transform: uppercase;
+                letter-spacing: 2px;
             }
             .cv-projet-lieu {
                 padding: 20px 0px 5px;
                 p {
-                    letter-spacing: 3px;
-                    color: darken($color-white, 40%);
-                    text-shadow: 0px 0px 1px darken($color-white, 10%);
+                    color: $soft-black;
                     font-size: 0.9em;
                 }
             }
             .cv-projet-type {
                 text-align: right;
                 p {
-                    font-size: 1em;
                     display: inline-block;
-                    font-family: 'Raleway';
                     padding: 5px 10px;
+                    font-family: 'Raleway';
+                    text-shadow: $light-shadow;
                     border: 1px solid darken($color-white, 70%);
-                    box-shadow: 0px 0px 1px darken($color-white, 20%);
-                    color: darken($color-white, 70%);
-                    text-shadow: 0px 0px 1px darken($color-white, 20%);
+                    box-shadow: $light-shadow;
                 }
             }
         }
@@ -162,6 +146,7 @@ $block-translate: 7px;
                     text-align: right;
                     font-weight: bold;
                     color: $timeline-main-color;
+                    text-shadow: $soft-shadow;
                     letter-spacing: 2px;
                     font-size: 1.1em;
                     line-height: 17px;
@@ -171,6 +156,7 @@ $block-translate: 7px;
         .cv-timeline-join {
             position: absolute;
             border-top: solid 2px $timeline-main-color;
+            box-shadow: $soft-shadow;
             width: 6.5%;
             left: 104%;
             top: 63px;
@@ -193,6 +179,9 @@ $block-translate: 7px;
                     right: 100%;
                     border-right-color: $color-white;
                     border-left: none;
+                }
+                &:hover {
+                    right: $block-translate;
                 }
             }
             .cv-timeline-info {

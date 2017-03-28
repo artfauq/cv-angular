@@ -5,12 +5,13 @@ nav {
     a {
         display: inline-block;
         position: relative;
-        font-size: 16px;
         padding: 10px 15px;
         margin: 5px 12px;
-        color: #333;
+        color: $color-white;
         text-transform: uppercase;
+        font-size: 16px;
         font-family: "Open Sans";
+        text-shadow: $medium-shadow;
         letter-spacing: 2px;
         &:after {
             content: '';
@@ -19,7 +20,8 @@ nav {
             left: 0;
             width: 0%;
             height: 1px;
-            background-color: rgba(0, 0, 0, .75);
+            background-color: $color-white;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
             opacity: 0;
             transition: width 0.4s, left 0.4s, opacity 0.3s;
         }
