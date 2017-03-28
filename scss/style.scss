@@ -19,23 +19,33 @@ body {
 .background-fade {
     &:after {
         content: '';
-        width: 160%;
+        width: 140%;
         height: 100%;
         position: absolute;
         top: 0;
         left: 0;
         z-index: -1;
-        @include linear-gradient(90deg, $gradient-color-one 0%, $gradient-color-two 35%, $gradient-color-three 100%);
+        @include linear-gradient(90deg, $gradient-color-one 0%, $gradient-color-two 50%, $gradient-color-three 100%);
         transition: all 1s;
+        animation: backgroundFade 7s ease-in-out alternate infinite;
     }
-    &.background-experiences:after {
+    // &.background-experiences:after {
+    //     left: 0;
+    // }
+    // &.background-competences:after {
+    //     left: -30%;
+    // }
+    // &.background-outils:after {
+    //     left: -60%;
+    // }
+}
+
+@keyframes backgroundFade {
+    from {
         left: 0;
     }
-    &.background-competences:after {
-        left: -30%;
-    }
-    &.background-outils:after {
-        left: -60%;
+    to {
+        left: -40%;
     }
 }
 
@@ -105,7 +115,6 @@ ul {
 
 .cv-categorie {
     border: 1px solid $soft-white;
-    padding: 10px 0px;
     border-radius: 10px;
     text-align: center;
     &+h3 {
@@ -119,7 +128,7 @@ ul {
         font-size: 1.22em;
     }
     .cv-element {
-        margin: 12px 15px;
+        margin: 15px;
         padding: 14px;
         width: 110px;
         height: 110px;
@@ -128,11 +137,10 @@ ul {
         .element-logo {
             max-height: 100%;
             max-width: 100%;
-            background-color: $soft-white;
             transition: all 0.3s;
         }
         span {
-            cursor: default;
+            cursor: pointer;
             position: absolute;
             top: 0;
             left: 0;
@@ -145,7 +153,7 @@ ul {
             color: #fff;
             opacity: 0;
             z-index: 100;
-            transition: all 0.35s;
+            transition: all 0.2s;
             font-weight: bold;
             font-size: 1.1em;
         }
@@ -164,12 +172,13 @@ ul {
             width: 100%;
             height: 100%;
             opacity: 0;
-            border-radius: 8px;
+            border-radius: 100%;
             background-color: $color-black;
+            box-shadow: $medium-shadow;
             transition: all 0.4s;
         }
         &:hover .element-logo {
-            padding: 8px;
+            padding: 7px;
         }
         &:hover span {
             opacity: .85;
