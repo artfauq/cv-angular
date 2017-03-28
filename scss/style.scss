@@ -5,9 +5,38 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
-    @include linear-gradient(130deg, #ff5f5f 0%, #b93131 80%);
+    min-height: 100%;
+    position: relative;
     color: $color-white;
+    overflow-x: hidden;
+}
+
+.background-fade {
+    &:after {
+        content: '';
+        width: 160%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include linear-gradient(90deg, $gradient-color-one 0%, $gradient-color-two 35%, $gradient-color-three 100%);
+        transition: all 1s;
+    }
+    &.background-experiences:after {
+        left: 0;
+    }
+    &.background-competences:after {
+        left: -30%;
+    }
+    &.background-outils:after {
+        left: -60%;
+    }
 }
 
 a,
@@ -52,6 +81,10 @@ ul {
 
 
 /* General classes */
+
+.container {
+    display: none;
+}
 
 .center-all {
     display: flex;

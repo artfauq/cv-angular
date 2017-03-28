@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" ng-app="myApp">
 
 <head>
     <title>First Angular App</title>
@@ -29,8 +29,8 @@
     <!-- End AngularJS Scripts -->
 </head>
 
-<body ng-app="myApp">
-    <div class="container" ng-controller="MainController">
+<body ng-controller="MainController" class="background-{{activeSection}}">
+    <div class="container">
         <nav>
             <a href="#" class="nav-link" ng-repeat="(sectionName, content) in sections" ng-click="sectionChange(sectionName)" ng-class="getClass(sectionName)">{{sectionName}}</a>
         </nav>

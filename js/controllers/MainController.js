@@ -1,5 +1,24 @@
 app.controller('MainController', function($scope, dataFetch) {
 
+    // Fetch data from JSON file
+    dataFetch.then(function(response) {
+        var data = response.data;
+
+        var experiences = data.experiences;
+        var competences = data.competences;
+        var outils = data.outils;
+
+        experiences.forEach(function(projet, index) {
+            projet.dateDebut = new Date(projet.dateDebut).getTime();
+        });
+
+        $scope.sections = {
+            experiences: experiences,
+            competences: competences,
+            outils: outils
+        };
+    });
+
     // Active Section
     $scope.activeSection = 'experiences';
 
@@ -30,22 +49,5 @@ app.controller('MainController', function($scope, dataFetch) {
         return ($scope.propertyName == input) ? true : false;
     };
 
-    // Fetch data from JSON file
-    dataFetch.then(function(response) {
-        var data = response.data;
 
-        var experiences = data.experiences;
-        var competences = data.competences;
-        var outils = data.outils;
-
-        experiences.forEach(function(projet, index) {
-            projet.dateDebut = new Date(projet.dateDebut).getTime();
-        });
-
-        $scope.sections = {
-            experiences: experiences,
-            competences: competences,
-            outils: outils
-        };
-    });
 });
