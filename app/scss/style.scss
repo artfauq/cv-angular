@@ -1,4 +1,10 @@
 @import "variables";
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body {
     background-color: $background-color;
 }
@@ -81,8 +87,8 @@ ul {
     .cv-element {
         margin: 12px 15px;
         padding: 14px;
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
         display: inline-block;
         position: relative;
         .element-logo {
@@ -91,6 +97,7 @@ ul {
             transition: all 0.3s;
         }
         span {
+            cursor: default;
             position: absolute;
             top: 0;
             left: 0;
@@ -117,7 +124,7 @@ ul {
         &:after {
             content: '';
             position: absolute;
-            top: 5px;
+            top: 0px;
             left: 0;
             width: 100%;
             height: 100%;
@@ -134,7 +141,6 @@ ul {
         }
         &:hover:after {
             opacity: .7;
-            top: 0;
         }
     }
 }

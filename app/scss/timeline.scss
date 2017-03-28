@@ -1,5 +1,6 @@
 @import "variables";
 $timeline-main-color: $light-black;
+$block-translate: 7px;
 #timeline {
     position: relative;
     padding: 2em 0;
@@ -37,11 +38,29 @@ $timeline-main-color: $light-black;
             display: table;
             clear: both;
         }
+        &:hover {
+            .cv-timeline-content {
+                right: -$block-translate;
+            }
+            .cv-timeline-info {
+                right: $block-translate;
+            }
+            &.cv-timeline-block-even {
+                .cv-timeline-content {
+                    right: $block-translate;
+                }
+                .cv-timeline-info {
+                    right: -$block-translate;
+                }
+            }
+        }
         .cv-timeline-content {
             padding: 18px 14px 14px 20px;
             background-color: $color-white;
             box-shadow: 1px 2px 3px lighten($color-black, 85%);
             position: relative;
+            right: 0;
+            transition: all 0.4s;
             @media (min-width: $breakpoint-sm) {
                 width: 45%;
             }
@@ -95,7 +114,10 @@ $timeline-main-color: $light-black;
         .cv-timeline-info {
             margin-bottom: 8px;
             display: block;
+            position: relative;
             height: 35px;
+            right: 0;
+            transition: all 0.4s;
             @media (min-width: $breakpoint-xs) {
                 height: 50px;
                 display: flex;

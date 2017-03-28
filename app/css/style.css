@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 body {
   background-color: #faf5f0; }
 
@@ -66,8 +71,8 @@ ul {
   .cv-categorie .cv-element {
     margin: 12px 15px;
     padding: 14px;
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     display: inline-block;
     position: relative; }
     .cv-categorie .cv-element .element-logo {
@@ -75,6 +80,7 @@ ul {
       max-width: 100%;
       transition: all 0.3s; }
     .cv-categorie .cv-element span {
+      cursor: default;
       position: absolute;
       top: 0;
       left: 0;
@@ -98,7 +104,7 @@ ul {
     .cv-categorie .cv-element:after {
       content: '';
       position: absolute;
-      top: 5px;
+      top: 0px;
       left: 0;
       width: 100%;
       height: 100%;
@@ -111,8 +117,7 @@ ul {
     .cv-categorie .cv-element:hover span {
       opacity: .85; }
     .cv-categorie .cv-element:hover:after {
-      opacity: .7;
-      top: 0; }
+      opacity: .7; }
 
 .list-order {
   padding: 6px;
