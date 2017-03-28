@@ -1,5 +1,8 @@
 $(document).ready(function() {
     $(window).on('load', function() {
+        $('body').addClass('background-fade');
+        $('.container').fadeIn();
+
         // Initialize
         $('#timeline').fadeIn();
         hideBlocks();
