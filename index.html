@@ -29,13 +29,13 @@
     <!-- End AngularJS Scripts -->
 </head>
 
-<body ng-controller="MainController" class="background-{{activeSection}}">
+<body ng-controller="MainController" class="background-fade">
     <div class="container">
-        <nav>
+        <nav class="row">
             <a href="#" class="nav-link" ng-repeat="(sectionName, content) in sections" ng-click="sectionChange(sectionName)" ng-class="getClass(sectionName)">{{sectionName}}</a>
         </nav>
 
-        <section id="experiences" ng-show="activeSection=='experiences'">
+        <section id="experiences" ng-show="activeSection=='experiences'" class="row">
             <h2>Experiences</h2>
             <div class="list-order">
                 <p>Sort by</p>
@@ -53,7 +53,7 @@
             </div>
 
             <div id="timeline">
-                <div experience element="experience" ng-repeat="experience in sections.experiences | orderBy:propertyName" class="cv-timeline-block is-hidden" ng-class-even="'cv-timeline-block-even'"></div>
+                <experience element="experience" ng-repeat="experience in sections.experiences | orderBy:propertyName" class="timeline-block is-hidden" ng-class-even="'timeline-block-even'"></experience>
             </div>
         </section>
 
@@ -61,7 +61,7 @@
             <h2>Competences</h2>
             <div ng-repeat="(type, competences) in sections.competences | groupBy:'type'">
                 <div class="cv-categorie">
-                    <div competence element="competence" ng-repeat="competence in competences" class="cv-element is-hidden"></div>
+                    <competence element="competence" ng-repeat="competence in competences" class="cv-element is-hidden"></competence>
                 </div>
                 <h3>{{type}}</h3>
             </div>
@@ -71,7 +71,7 @@
             <h2>Outils &amp; Logiciels</h2>
             <div ng-repeat="(type, outils) in sections.outils | groupBy:'type'">
                 <div class="cv-categorie">
-                    <div outil element="outil" ng-repeat="outil in outils" class="cv-element"></div>
+                    <outil element="outil" ng-repeat="outil in outils" class="cv-element"></outil>
                 </div>
                 <h3>{{type}}</h3>
             </div>
@@ -83,7 +83,7 @@
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- End Vendors -->
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/scripts/main.js"></script>
     <!-- Controllers -->
     <script type="text/javascript" src="js/controllers/MainController.js"></script>
     <!-- End Controllers -->

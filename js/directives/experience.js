@@ -1,6 +1,6 @@
 app.directive('experience', function() {
     return {
-        restrict: 'A',
+        restrict: 'E',
         scope: {
             element: '='
         },
