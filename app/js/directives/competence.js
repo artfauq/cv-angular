@@ -1,6 +1,6 @@
 app.directive('competence', function() {
     return {
-        restrict: 'A',
+        restrict: 'E',
         scope: {
             element: '='
         },

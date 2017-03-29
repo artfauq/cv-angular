@@ -29,15 +29,6 @@ body {
         transition: all 1s;
         animation: backgroundFade 7s ease-in-out alternate infinite;
     }
-    // &.background-experiences:after {
-    //     left: 0;
-    // }
-    // &.background-competences:after {
-    //     left: -30%;
-    // }
-    // &.background-outils:after {
-    //     left: -60%;
-    // }
 }
 
 @keyframes backgroundFade {

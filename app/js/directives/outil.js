@@ -1,6 +1,6 @@
 app.directive('outil', function() {
     return {
-        restrict: 'A',
+        restrict: 'E',
         scope: {
             element: '='
         },
