@@ -1,27 +1,27 @@
 {
-  "name": "angular-cv-app",
-  "description": "CV AngularJS application.",
-  "main": "index.js",
-  "authors": [
-    "Arthur Fauquenot"
-  ],
-  "license": "ISC",
-  "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0",
-    "angular": "^1.6.3",
-    "angular-route": "^1.6.3",
-    "angular-i18n": "^1.6.3",
-    "angular-animate": "^1.6.3",
-    "normalize-css": "^6.0.0",
-    "angular-filter": "^0.5.15"
-  }
+    "name": "angular-cv",
+    "description": "AngularJS CV web application.",
+    "main": "index.js",
+    "authors": [
+        "Arthur Fauquenot <arthurfauquenot@yahoo.com> (htt://arthurfauquenot.com/)"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/arthurfauq/cv-angular",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "font-awesome": "^4.7.0",
+        "angular": "^1.6.3",
+        "angular-route": "^1.6.3",
+        "angular-i18n": "^1.6.3",
+        "angular-animate": "^1.6.3",
+        "normalize-css": "^6.0.0",
+        "angular-filter": "^0.5.15"
+    }
 }
