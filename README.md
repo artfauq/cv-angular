@@ -2,6 +2,8 @@
 
 My resume made with a JSON file and AngularJS.
 
+Link : [http://arthurfauq.github.io/angular-cv/app/](http://arthurfauq.github.io/angular-cv/app/)
+
 ## Instructions
 
 Npm, Bower and Gulp must be installed to run the project.
