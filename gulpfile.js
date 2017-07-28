@@ -14,7 +14,7 @@ var bases = {
 };
 
 var paths = {
-    html: './**/*.html',
+    html: './index.html',
     scripts: ['./js/**/*.js', './app.js'],
     styles: './scss/**/*.scss'
 };
@@ -60,7 +60,7 @@ gulp.task('styles', ['clean:styles'], function() {
 gulp.task('jshint', function() {
     return gulp.src(paths.scripts, { cwd: bases.app })
         .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter('jshint-stylish'));
 });
 
 // Sass compile Task
