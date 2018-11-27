@@ -2,18 +2,38 @@
 
 My resume made with a JSON file and AngularJS.
 
-Link : [http://arthurfauq.github.io/angular-cv/app/](http://arthurfauq.github.io/angular-cv/app/)
+Link : [https://arthurfauq.github.io/cv-angular/](https://arthurfauq.github.io/cv-angular/)
+
+**NOTE**: this resume is out of date (March 2017).
 
 ## Instructions
 
-Npm, Bower and Gulp must be installed to run the project.
+npm, Bower and Gulp must be installed to run the project.
 
 ### Requirements
 
 To install `npm`, install [Node.js](https://nodejs.org/en/).
 
-You can then install Bower and Gulp with the command line by typing `npm install -g bower gulp-cli`.
+You can then install Bower and Gulp with the command line by running
 
-### Use
+```
+npm install -g bower gulp-cli
+```
 
-Run `npm install` and `bower install` and finally `gulp serve`.
+### Installation
+
+Install the required dependencies with the following commands
+
+```
+npm install
+```
+
+```
+bower install
+```
+
+Finally, run the application with
+
+```
+gulp serve
+```
