@@ -1,0 +1,8 @@
+{
+  "extends": ["stylelint-config-standard", "./node_modules/prettier-stylelint/config.js"],
+  "rules": {
+    "font-family-no-missing-generic-family-keyword": null,
+    "function-name-case": null,
+    "at-rule-no-unknown": null
+  }
+}

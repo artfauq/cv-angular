@@ -1,92 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr" ng-app="myApp">
+  <head>
+    <title>Angular CV</title>
 
-<head>
-    <title>First Angular App</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- build:css styles/vendor.min.css -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/normalize.css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link rel="stylesheet" type="text/css" href="styles/main.min.css" />
+    <!-- build:js scripts/vendor.min.js -->
+    <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-i18n/angular-locale_fr-fr.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-filter/dist/angular-filter.min.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- endbuild -->
 
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/timeline.css">
-    <link rel="stylesheet" type="text/css" href="css/navigation.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script src="scripts/bundle.min.js"></script>
+  </head>
 
-    <script type="text/javascript" src="js/angular/angular.min.js"></script>
-    <script type="text/javascript" src="js/angular/angular-locale_fr-fr.js"></script>
-    <script type="text/javascript" src="js/angular/angular-filter.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-</head>
-
-<body ng-controller="MainController" class="background-fade">
+  <body ng-controller="MainController" class="background-fade">
     <div class="container">
-        <nav class="row">
-            <a href="#" class="nav-link" ng-repeat="(sectionName, content) in sections" ng-click="sectionChange(sectionName)" ng-class="getClass(sectionName)">{{sectionName}}</a>
-        </nav>
+      <nav class="row">
+        <a
+          href="#"
+          class="nav-link"
+          ng-repeat="(sectionName, content) in sections"
+          ng-click="sectionChange(sectionName)"
+          ng-class="getClass(sectionName)"
+          >{{ sectionName }}</a
+        >
+      </nav>
 
-        <section id="experiences" ng-show="activeSection=='experiences'" class="row">
-            <h2>Experiences</h2>
-            <div class="list-order">
-                <p>Sort by</p>
-                <ul>
-                    <li ng-show="isSelected('-dateDebut')">
-                        <a href="#" class="order-by" ng-click="sortBy()">Most recent <i class="fa fa-arrow-down"></i></a>
-                    </li>
-                    <li ng-show="isSelected('dateDebut')">
-                        <a href="#" class="order-by" ng-click="sortBy()">Least recent <i class="fa fa-arrow-up"></i></a>
-                    </li>
-                    <li ng-show="isSelected('type')">
-                        <a href="#" class="order-by" ng-click="sortBy()">Type <i class="fa fa-arrow-down"></i></a>
-                    </li>
-                </ul>
-            </div>
+      <section id="experiences" ng-show="activeSection=='experiences'" class="row">
+        <h2>Experiences</h2>
+        <div class="list-order">
+          <p>Sort by</p>
+          <ul>
+            <li ng-show="isSelected('-dateDebut')">
+              <a href="#" class="order-by" ng-click="sortBy()">Most recent <i class="fa fa-arrow-down"></i></a>
+            </li>
+            <li ng-show="isSelected('dateDebut')">
+              <a href="#" class="order-by" ng-click="sortBy()">Least recent <i class="fa fa-arrow-up"></i></a>
+            </li>
+            <li ng-show="isSelected('type')">
+              <a href="#" class="order-by" ng-click="sortBy()">Type <i class="fa fa-arrow-down"></i></a>
+            </li>
+          </ul>
+        </div>
 
-            <div id="timeline">
-                <experience element="experience" ng-repeat="experience in sections.experiences | orderBy:propertyName" class="timeline-block is-hidden" ng-class-even="'timeline-block-even'"></experience>
-            </div>
-        </section>
+        <div id="timeline">
+          <experience
+            element="experience"
+            ng-repeat="experience in sections.experiences | orderBy:propertyName"
+            class="timeline-block is-hidden"
+            ng-class-even="'timeline-block-even'"
+          ></experience>
+        </div>
+      </section>
 
-        <section id="competences" ng-show="activeSection=='competences'" class="row">
-            <h2>Competences</h2>
-            <div ng-repeat="(type, competences) in sections.competences | groupBy:'type'">
-                <div class="cv-categorie">
-                    <competence element="competence" ng-repeat="competence in competences" class="cv-element is-hidden"></competence>
-                </div>
-                <h3>{{type}}</h3>
-            </div>
-        </section>
+      <section id="competences" ng-show="activeSection=='competences'" class="row">
+        <h2>Competences</h2>
+        <div ng-repeat="(type, competences) in sections.competences | groupBy:'type'">
+          <div class="cv-categorie">
+            <competence
+              element="competence"
+              ng-repeat="competence in competences"
+              class="cv-element is-hidden"
+            ></competence>
+          </div>
+          <h3>{{ type }}</h3>
+        </div>
+      </section>
 
-        <section id="outils" ng-show="activeSection=='outils'">
-            <h2>Outils &amp; Logiciels</h2>
-            <div ng-repeat="(type, outils) in sections.outils | groupBy:'type'">
-                <div class="cv-categorie">
-                    <outil element="outil" ng-repeat="outil in outils" class="cv-element"></outil>
-                </div>
-                <h3>{{type}}</h3>
-            </div>
-        </section>
+      <section id="outils" ng-show="activeSection=='outils'">
+        <h2>Outils &amp; Logiciels</h2>
+        <div ng-repeat="(type, outils) in sections.outils | groupBy:'type'">
+          <div class="cv-categorie"><outil element="outil" ng-repeat="outil in outils" class="cv-element"></outil></div>
+          <h3>{{ type }}</h3>
+        </div>
+      </section>
     </div>
 
-    <!-- Scripts -->
-    <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-
-    <!-- Controllers -->
-    <script type="text/javascript" src="js/angular/controllers/MainController.js"></script>
-
-    <!-- Services -->
-    <script type="text/javascript" src="js/angular/services/dataFetch.js"></script>
-
-    <!-- Directives -->
-    <script type="text/javascript" src="js/angular/directives/experience.js"></script>
-    <script type="text/javascript" src="js/angular/directives/competence.js"></script>
-    <script type="text/javascript" src="js/angular/directives/outil.js"></script>
-    <!-- End Scripts -->
-</body>
-
+    <!-- build:js scripts/main.min.js -->
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "extends": ["airbnb-base", "prettier"],
+  "env": {
+    "jquery": true,
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "func-names": 0,
+    "no-use-before-define": 0,
+    "linebreak-style": ["error", "windows"]
+  },
+  "globals": {
+    "angular": true,
+    "app": true
+  }
+}
