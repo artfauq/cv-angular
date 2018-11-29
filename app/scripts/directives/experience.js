@@ -3,5 +3,5 @@ export default () => ({
   scope: {
     element: '='
   },
-  templateUrl: '../views/experience.html'
+  templateUrl: './views/experience.html'
 });
