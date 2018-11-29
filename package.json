@@ -10,6 +10,7 @@
   "scripts": {
     "build": "gulp build",
     "start": "gulp serve",
+    "deploy": "npm run build && gh-pages -d dist",
     "lint": "eslint --fix \"**/*.js\" && prettier-stylelint \"app/**/*.scss\" --write"
   },
   "husky": {
@@ -37,6 +38,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.8.0",
+    "gh-pages": "^2.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^8.0.0",
