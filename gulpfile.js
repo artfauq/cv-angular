@@ -1,157 +1,170 @@
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const babelify = require('babelify');
-const browserSync = require('browser-sync').create();
 const browserify = require('browserify');
+const browserSync = require('browser-sync').create();
 const buffer = require('vinyl-buffer');
-const clean = require('gulp-clean');
-const cleanCSS = require('gulp-clean-css');
+const cache = require('gulp-cache');
+const cssnano = require('gulp-cssnano');
+const del = require('del');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 const imagemin = require('gulp-imagemin');
 const ngAnnotate = require('browserify-ngannotate');
-const rename = require('gulp-rename');
 const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
 const source = require('vinyl-source-stream');
+const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const useref = require('gulp-useref');
 
-const bases = {
-  app: 'app/',
-  dist: 'dist/'
+const config = {
+  sourcemaps: './maps',
+  browserSync: {
+    baseDir: ['./', 'dist']
+  },
+  assets: {
+    src: 'app/assets/**/*',
+    dest: 'dist/assets'
+  },
+  fonts: {
+    src: 'app/fonts/**/*',
+    dest: 'dist/fonts'
+  },
+  images: {
+    src: 'app/img/**/*',
+    dest: 'dist/img'
+  },
+  index: {
+    src: 'app/index.html',
+    dest: 'dist'
+  },
+  sass: {
+    src: 'app/scss/**/*.scss',
+    dest: 'dist/css'
+  },
+  scripts: {
+    src: 'app/js/**/*.js',
+    dest: 'dist/js'
+  },
+  views: {
+    src: 'app/views/**/*.html',
+    dest: 'dist/views'
+  }
 };
 
-const paths = {
-  views: 'views/**',
-  assets: ['fonts/**', 'images/**', '*.json'],
-  scripts: 'scripts/**',
-  styles: 'styles/**'
-};
+/**
+ * Run BrowserSync
+ */
+gulp.task('browserSync', () =>
+  browserSync.init({
+    server: {
+      baseDir: config.browserSync.baseDir
+    }
+  })
+);
 
 /**
  * Clean dist directory
  */
-gulp.task('clean', () =>
-  gulp
-    .src(bases.dist, {
-      read: false
-    })
-    .pipe(clean())
-);
+gulp.task('clean:dist', () => del.sync('dist'));
 
 /**
- * Copy assets
+ * Copy static files
  */
-gulp.task('copy-assets', () =>
-  gulp
-    .src(paths.assets, {
-      cwd: bases.app,
-      base: bases.app
-    })
-    .pipe(gulp.dest(bases.dist))
-);
-
-/**
- * Copy HTML files
- */
-gulp.task('copy-html-files', () =>
-  gulp
-    .src(['index.html', paths.views], {
-      cwd: bases.app,
-      base: bases.app
-    })
-    .pipe(useref())
-    .on('error', gutil.log)
-    .pipe(gulpif('*.css', autoprefixer()))
-    .pipe(gulpif('*.css', cleanCSS()))
-    .pipe(gulpif('*.css', gulp.dest(bases.dist)))
-    .pipe(gulpif('*.js', babel({ presets: ['@babel/env'] })))
-    .pipe(gulpif('*.js', uglify()))
-    .pipe(gulpif('*.js', gulp.dest(bases.dist)))
-    .pipe(gulp.dest(bases.dist))
-);
+gulp.task('copy', () => {
+  gulp.src(config.index.src).pipe(gulp.dest(config.index.dest));
+  gulp.src(config.views.src).pipe(gulp.dest(config.views.dest));
+  gulp.src(config.fonts.src).pipe(gulp.dest(config.fonts.dest));
+  gulp.src(config.images.src).pipe(gulp.dest(config.images.dest));
+  gulp.src(config.assets.src).pipe(gulp.dest(config.assets.dest));
+});
 
 /**
  * Compile SASS files
  */
-gulp.task('sass', () => {
+gulp.task('sass', () =>
   gulp
-    .src(`styles/main.scss`, {
-      cwd: bases.app,
-      base: bases.app
-    })
+    .src(config.sass.src)
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(cleanCSS())
+    .pipe(sourcemaps.write(config.sourcemaps))
+    .pipe(gulp.dest(config.sass.dest))
     .pipe(
-      rename({
-        suffix: '.min'
+      browserSync.reload({
+        stream: true
       })
     )
-    .pipe(gulp.dest(bases.dist));
-});
+);
 
 /**
- * Copy Angular scripts
+ * Bundle and transpile scripts
  */
-gulp.task('scripts', () =>
-  browserify({ entries: `${bases.app}scripts/app.js` })
+gulp.task('scripts', () => {
+  gulp
+    .src('app/js/main.js')
+    .pipe(babel({ presets: ['@babel/preset-env'] }))
+    .pipe(gulp.dest(config.scripts.dest));
+
+  const b = browserify({
+    entries: 'app/js/app.js'
+  });
+
+  return b
     .transform(babelify, { presets: ['@babel/preset-env'] })
     .transform(ngAnnotate)
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    .pipe(uglify())
     .on('error', gutil.log)
-    .pipe(
-      rename({
-        suffix: '.min'
-      })
-    )
-    .pipe(gulp.dest(`${bases.dist}/scripts`))
+    .pipe(gulp.dest(config.scripts.dest));
+});
+
+/**
+ * Parse styles and scripts from index.html
+ */
+gulp.task('useref', () =>
+  gulp
+    .src('dist/index.html')
+    .pipe(useref())
+    .pipe(gulpif('*.css', autoprefixer()))
+    .pipe(gulpif('*.css', cssnano()))
+    .pipe(gulpif('*.js', uglify()))
+    .on('error', gutil.log)
+    .pipe(gulp.dest(config.index.dest))
 );
 
 /**
  * Minify images
  */
-gulp.task('minify-images', () =>
+gulp.task('images', () =>
   gulp
-    .src('images/**', {
-      cwd: bases.dist,
-      base: bases.dist
-    })
-    .pipe(imagemin())
-    .pipe(gulp.dest(bases.dist))
+    .src(config.images.src)
+    .pipe(cache(imagemin()))
+    .pipe(gulp.dest(config.images.dest))
 );
 
 /**
  * Watch for changes
  */
-gulp.task('watch', () => {
-  browserSync.init({
-    server: {
-      baseDir: ['./', bases.dist]
-    }
-  });
-
-  gulp.watch(bases.app + paths.views, ['copy-html-files']).on('change', browserSync.reload);
-  gulp.watch(bases.app + paths.assets, ['copy-assets']).on('change', browserSync.reload);
-  gulp.watch(bases.app + paths.styles, ['sass']).on('change', browserSync.reload);
-  gulp.watch(bases.app + paths.scripts, ['scripts']).on('change', browserSync.reload);
+gulp.task('watch', ['browserSync'], () => {
+  gulp.watch([config.index.src, config.views.src], ['copy']).on('change', browserSync.reload);
+  gulp.watch(config.sass.src, ['sass']).on('change', browserSync.reload);
+  gulp.watch(config.scripts.src, ['scripts']).on('change', browserSync.reload);
 });
 
 /**
  * Serve application
  */
-gulp.task('serve', cb => {
-  runSequence('clean', ['copy-html-files', 'copy-assets'], ['sass', 'scripts'], 'watch', cb);
+gulp.task('default', cb => {
+  runSequence('clean:dist', ['sass', 'scripts', 'copy'], 'watch', cb);
 });
 
 /**
  * Build application
  */
 gulp.task('build', cb => {
-  runSequence('clean', ['copy-html-files', 'copy-assets'], ['sass', 'scripts'], 'minify-images', cb);
+  runSequence('clean:dist', ['sass', 'scripts', 'copy'], ['useref', 'images'], cb);
 });

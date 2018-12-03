@@ -14,15 +14,18 @@
     <!-- endbuild -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-    <link rel="stylesheet" type="text/css" href="styles/main.min.css" />
-    <!-- build:js scripts/vendor.min.js -->
+    <!-- build:css styles/main.min.css -->
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <!-- endbuild -->
+    <!-- build:js js/vendor.min.js -->
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="../node_modules/angular-i18n/angular-locale_fr-fr.js"></script>
     <script type="text/javascript" src="../node_modules/angular-filter/dist/angular-filter.min.js"></script>
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
     <!-- endbuild -->
-
-    <script src="scripts/bundle.min.js"></script>
+    <!-- build:js js/bundle.min.js -->
+    <script type="text/javascript" src="./js/bundle.js"></script>
+    <!-- endbuild -->
   </head>
 
   <body ng-controller="MainController" class="background-fade">
@@ -88,8 +91,8 @@
       </section>
     </div>
 
-    <!-- build:js scripts/main.min.js -->
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <!-- build:js js/main.min.js -->
+    <script type="text/javascript" src="./js/main.js"></script>
     <!-- endbuild -->
   </body>
 </html>

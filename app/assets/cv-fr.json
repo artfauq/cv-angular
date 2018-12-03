@@ -1,0 +1,293 @@
+{
+  "experiences": [
+    {
+      "nom": "ECE Paris",
+      "id": "ece",
+      "lieu": "Paris, France",
+      "dateDebut": "2012-09",
+      "dateFin": "2017-06",
+      "description": "Majeure Objets Connectés, Réseaux et Services. Développement web - Application mobile (Android) - Projets informatiques (Java, C…) - Prototypage d’objets connectés (Conception 3D, Réseaux, Capteurs…) - Gestion de projet",
+      "type": "Formation"
+    },
+    {
+      "nom": "University of Newcastle",
+      "id": "uon",
+      "lieu": "Newcastle, Australie",
+      "dateDebut": "2016-07",
+      "dateFin": "2016-11",
+      "description": "Semestre d'études à l'étranger. Technologies web (Java EE) - Multimédia et animation 3D - Communication digitale (WordPress) - Entrepreneuriat et diversité de l’innovation",
+      "type": "Formation"
+    },
+    {
+      "nom": "Concordia University",
+      "id": "concordia",
+      "lieu": "Montréal, Canada",
+      "dateDebut": "2014-09",
+      "dateFin": "2014-12",
+      "description": "Semestre d'études à l'étranger. Programmation Orientée Objet (C++) - Management de projet - Conception de systèmes numériques - Gestion budgétaire",
+      "type": "Formation"
+    },
+    {
+      "nom": "Ingénieur Étude et Développement",
+      "societe": "Solutec",
+      "id": "solutec",
+      "lieu": "Paris, France",
+      "dateDebut": "2017-03",
+      "dateFin": "2017-08",
+      "description": "Stage de 6 mois. Mission d'étude et de développement en JavaScript.",
+      "type": "Projet Professionnel"
+    },
+    {
+      "nom": "Programmeur R&D",
+      "societe": "Singularity Insight",
+      "id": "singularity-insight",
+      "lieu": "Paris, France",
+      "dateDebut": "2016-04",
+      "dateFin": "2016-07",
+      "description": "Stage de trois mois. Recherche et développement dans le domaine des lunettes connectées - Création d’applications de réalité augmentée",
+      "type": "Projet Professionnel"
+    },
+    {
+      "nom": "Développeur",
+      "societe": "MINT - ECE Paris",
+      "id": "mint",
+      "lieu": "Paris, France",
+      "dateDebut": "2015-09",
+      "dateFin": "2016-05",
+      "description": "Projet étudiant dans l’innovation digitale. Développement d’une interface tactile intuitive pour simplifier le processus d’enregistrement et de traitement d’une chanson - Lauréat du concours Digiprize",
+      "type": "Projet Etudiant"
+    },
+    {
+      "nom": "Développeur web",
+      "societe": "ALD Automotive",
+      "id": "ald-automotive",
+      "lieu": "Clichy, France",
+      "dateDebut": "2015-06",
+      "dateFin": "2015-07",
+      "description": "Stage de deux mois. Développement d’un portail web - Découverte des outils eXo Platform, XWiki et Microsoft Visual Studio (C#)",
+      "type": "Projet Professionnel"
+    },
+    {
+      "nom": "No Larsen",
+      "occupation": "Vice-Président Communication",
+      "id": "no-larsen",
+      "lieu": "Paris, France",
+      "dateDebut": "2015-05",
+      "dateFin": "2016-04",
+      "description": "Association Son et Lumières de l'ECE Paris. Organisation d’évènements musicaux dont un festival caritatif d’une semaine - Communication sur les réseaux sociaux - Réalisation d’affiches, flyers et vidéos promotionnelles",
+      "type": "Projet Personnel"
+    },
+    {
+      "nom": "Scouts et Guides de France",
+      "occupation": "Divers",
+      "id": "sgdf",
+      "lieu": "Rueil-Malmaison, France",
+      "dateDebut": "2002-09",
+      "dateFin": "2014-08",
+      "description": "Projet solidaire d’un mois dans une école à Da Teh, Vietnam - Chef Scout - Louveteau, scout, pionner et compagnon",
+      "type": "Projet Personnel"
+    }
+  ],
+  "competences": [
+    {
+      "nom": "HTML 5",
+      "id": "html5",
+      "type": "Développement web - Front-End"
+    },
+    {
+      "nom": "CSS 3",
+      "id": "css3",
+      "type": "Développement web - Front-End"
+    },
+    {
+      "nom": "JavaScript",
+      "id": "javascript",
+      "type": "Développement web - Front-End"
+    },
+    {
+      "nom": "Node.js",
+      "id": "nodejs",
+      "type": "Développement web - Back-End"
+    },
+    {
+      "nom": "PHP 5",
+      "id": "php",
+      "type": "Développement web - Back-End"
+    },
+    {
+      "nom": "MySQL",
+      "id": "mysql",
+      "type": "Développement web - Back-End"
+    },
+    {
+      "nom": "Java EE",
+      "id": "java-ee",
+      "type": "Développement web - Back-End"
+    },
+    {
+      "nom": "Java",
+      "id": "java",
+      "type": "Développement logiciel"
+    },
+    {
+      "nom": "C++",
+      "id": "c++-language",
+      "type": "Développement logiciel"
+    },
+    {
+      "nom": "C",
+      "id": "c-language",
+      "type": "Développement logiciel"
+    },
+    {
+      "nom": "Python",
+      "id": "python",
+      "type": "Développement logiciel"
+    },
+    {
+      "nom": "Français",
+      "id": "francais",
+      "niveau": "Langue Maternelle",
+      "type": "Langues"
+    },
+    {
+      "nom": "Anglais",
+      "id": "anglais",
+      "niveau": "Niveau B2 - IELTS 7,5/9",
+      "type": "Langues"
+    },
+    {
+      "nom": "Espagnol",
+      "id": "espagnol",
+      "niveau": "Niveau A2",
+      "type": "Langues"
+    }
+  ],
+  "outils": [
+    {
+      "nom": "Git",
+      "id": "git",
+      "type": "Développement"
+    },
+    {
+      "nom": "Sass",
+      "id": "sass",
+      "type": "Développement"
+    },
+    {
+      "nom": "jQuery",
+      "id": "jquery",
+      "type": "Développement"
+    },
+    {
+      "nom": "Gulp",
+      "id": "gulp",
+      "type": "Développement"
+    },
+    {
+      "nom": "Bootstrap 3",
+      "id": "bootstrap",
+      "type": "Développement"
+    },
+    {
+      "nom": "Wamp",
+      "id": "wamp",
+      "type": "Développement"
+    },
+    {
+      "nom": "Cake PHP",
+      "id": "cakephp",
+      "type": "Développement"
+    },
+    {
+      "nom": "WordPress",
+      "id": "wordpress",
+      "type": "Développement"
+    },
+    {
+      "nom": "Visual Studio Code",
+      "id": "vscode",
+      "type": "Développement"
+    },
+    {
+      "nom": "Eclipse",
+      "id": "eclipse",
+      "type": "Développement"
+    },
+    {
+      "nom": "NetBeans",
+      "id": "netbeans",
+      "type": "Développement"
+    },
+    {
+      "nom": "Dreamweaver",
+      "id": "dreamweaver",
+      "type": "Développement"
+    },
+    {
+      "nom": "Android Studio",
+      "id": "android-studio",
+      "type": "Développement"
+    },
+    {
+      "nom": "Adobe Photoshop",
+      "id": "photoshop",
+      "type": "Media"
+    },
+    {
+      "nom": "Adobe InDesign",
+      "id": "indesign",
+      "type": "Media"
+    },
+    {
+      "nom": "Adobe Illustrator",
+      "id": "illustrator",
+      "type": "Media"
+    },
+    {
+      "nom": "Adobe Lightroom",
+      "id": "lightroom",
+      "type": "Media"
+    },
+    {
+      "nom": "Adobe Premiere Pro",
+      "id": "premiere-pro",
+      "type": "Media"
+    },
+    {
+      "nom": "Adobe After Effects",
+      "id": "after-effects",
+      "type": "Media"
+    },
+    {
+      "nom": "Word 2016",
+      "id": "office-word",
+      "type": "Autres"
+    },
+    {
+      "nom": "Powerpoint 2016",
+      "id": "office-powerpoint",
+      "type": "Autres"
+    },
+    {
+      "nom": "Excel 2016",
+      "id": "office-excel",
+      "type": "Autres"
+    },
+    {
+      "nom": "Microsoft Project",
+      "id": "msproject",
+      "type": "Autres"
+    },
+    {
+      "nom": "Cinema 4D",
+      "id": "c4d",
+      "type": "Autres"
+    },
+    {
+      "nom": "Ableton Live",
+      "id": "ableton",
+      "type": "Autres"
+    }
+  ]
+}

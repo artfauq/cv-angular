@@ -1,16 +1,8 @@
-import angular from 'angular';
+export default ($scope, $http) => {
+  'ngInject';
 
-import competence from './directives/competence';
-import experience from './directives/experience';
-import outil from './directives/outil';
-import capitalize from './filters/capitalize';
-import formatDate from './filters/formatDate';
-
-const app = angular.module('myApp', ['angular.filter']);
-
-app.controller('MainController', ($scope, $http) => {
   // Fetch data from JSON file
-  $http.get('./cv-fr.json').then(response => {
+  $http.get('./assets/cv-fr.json').then(response => {
     const { experiences, competences, outils } = response.data;
 
     experiences.map(project => Object.assign(project, { dateDebut: new Date(project.dateDebut).getTime() }));
@@ -51,10 +43,4 @@ app.controller('MainController', ($scope, $http) => {
   $scope.isSelected = function(input) {
     return $scope.propertyName === input;
   };
-});
-
-app.directive('competence', competence);
-app.directive('experience', experience);
-app.directive('outil', outil);
-app.filter('capitalize', capitalize);
-app.filter('formatDate', formatDate);
+};
